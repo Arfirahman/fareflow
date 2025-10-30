@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/topup', function () {
     return view('topup');
-})->name('topup');
+});
