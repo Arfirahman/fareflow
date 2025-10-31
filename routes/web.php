@@ -28,3 +28,13 @@ Route::post('/privacy/accept', function () {
 Route::get('/topup', function () {
     return view('topup');
 });
+
+Route::get('/profile', function () {
+    $user = auth()->user() ?? (object)[
+        'name'  => 'Guest User',
+        'phone' => '0815986432543',
+        'profile_photo_url' => asset('images/default-avatar.png')
+    ];
+
+    return view('profile.show', compact('user'));
+})->name('profile.show');
