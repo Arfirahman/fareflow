@@ -24,3 +24,7 @@ Route::get('/privacy-policy', function () {
 Route::post('/privacy/accept', function () {
     return redirect()->back()->with('status', 'Privacy policy accepted!');
 })->name('privacy.accept');
+
+Route::get('/topup', function () {
+    return view('topup');
+});
