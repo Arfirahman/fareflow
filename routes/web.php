@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
+Route::post('/privacy/accept', function () {
+    return redirect()->back()->with('status', 'Privacy policy accepted!');
+})->name('privacy.accept');
